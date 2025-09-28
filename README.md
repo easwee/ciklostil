@@ -14,6 +14,19 @@ To run locally:
 
 `npm run dev`
 
+## TODO
+
+- ~~render posts from .md~~
+- ~~authenticate as admin~~
+- ~~add RSS~~
+- edit existing post
+- create new post
+- implement ActivityPub protocol for posts
+- responsive basic template
+- add custom theme support
+- implement install wizzard
+- npm package
+
 ## Code of conduct
 
 Within the scope of this project, if a problem arises that can't be fixed by code, it's not a problem and will be ignored.
