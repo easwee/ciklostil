@@ -2,7 +2,7 @@
 
 Opinionated micro blog platform built with ActivityPub in mind. In active development.
 
-*ciklostil — a method of duplicating texts using hand- or motor-driven machines with stencils made from impregnated paper.*
+*[ciklostil](https://fran.si/133/sskj2-slovar-slovenskega-knjiznega-jezika-2/4464690/ciklostil?View=1&Query=ciklostil) — a machine for reproducing prints using stencils*
 
 ## Run locally
 

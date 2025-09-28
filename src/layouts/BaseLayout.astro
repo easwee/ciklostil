@@ -1,0 +1,31 @@
+---
+import { verifySession } from "@/lib/auth";
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "@/components/BaseHead.astro";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import EditBar from "@/components/EditBar.tsx";
+
+type Props = {
+	title: string;
+	description: string;
+};
+
+const { title, description } = Astro.props;
+const token = Astro.cookies.get("sid")?.value;
+const isAdmin = !!verifySession(token);
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+		    <slot />
+		</main>
+		<Footer />
+		{isAdmin && <EditBar client:load />}
+	</body>
+</html>

@@ -1,14 +1,18 @@
 ---
 import { Image } from "astro:assets";
+import { verifySession } from "@/lib/auth";
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import FormattedDate from "../components/FormattedDate.astro";
-import Header from "../components/Header.astro";
+import BaseHead from "@/components/BaseHead.astro";
+import Footer from "@/components/Footer.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import Header from "@/components/Header.astro";
+import EditBar from "@/components/EditBar.tsx";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const token = Astro.cookies.get("sid")?.value;
+const isAdmin = !!verifySession(token);
 ---
 
 <html lang="en">
@@ -82,5 +86,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			</article>
 		</main>
 		<Footer />
+		{isAdmin && <EditBar client:load />}
 	</body>
 </html>
