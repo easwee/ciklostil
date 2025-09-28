@@ -1,21 +1,23 @@
 {
-  "name": "ciklostil",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^4.3.6",
-    "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.6.0",
-    "astro": "^5.14.1",
-    "sharp": "^0.34.3"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.2.4"
-  }
+	"name": "ciklostil",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "biome format --write"
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^4.3.6",
+		"@astrojs/node": "^9.4.4",
+		"@astrojs/rss": "^4.0.12",
+		"@astrojs/sitemap": "^3.6.0",
+		"astro": "^5.14.1",
+		"sharp": "^0.34.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.4"
+	}
 }
