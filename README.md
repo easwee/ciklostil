@@ -2,7 +2,7 @@
 
 Opinionated micro blog platform built with ActivityPub in mind. In active development.
 
-*[ciklostil](https://fran.si/133/sskj2-slovar-slovenskega-knjiznega-jezika-2/4464690/ciklostil?View=1&Query=ciklostil) — a machine for reproducing prints using stencils*
+*[ciklostil](https://hr.wikipedia.org/wiki/Ciklostil#/media/Datoteka:Stencil_machine_with_its_last_paper_in,_Hendrik_Conscience_Heritage_Library,_Antwerp,_Belgium,_2016-07-26.jpg) — a machine for reproducing prints using stencils*
 
 ## Run locally
 
@@ -21,11 +21,14 @@ To run locally:
 - ~~add RSS~~
 - edit existing post
 - create new post
+- image upload
 - implement ActivityPub protocol for posts
 - responsive basic template
 - add custom theme support
 - implement install wizzard
 - npm package
+- extend with handy features (share posts, ...)
+- static pages support
 
 ## Code of conduct
 

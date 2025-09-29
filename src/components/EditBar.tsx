@@ -1,28 +1,4 @@
-function toggleEdit(): void {
-	document.documentElement.classList.toggle("editing");
-	window.dispatchEvent(new Event("edit-toggle"));
-}
-
-async function save() {
-	// const nodes = document.querySelectorAll<HTMLElement>(
-	// 	"[data-file][data-field]",
-	// );
-	// const byFile: Record<string, Record<string, string>> = {};
-	// nodes.forEach((n) => {
-	// 	const file = n.dataset.file!,
-	// 		field = n.dataset.field!;
-	// 	(byFile[file] ??= {})[field] = n.innerHTML; // if you want Markdown, convert server-side
-	// });
-	// const res = await fetch("/api/save", {
-	// 	method: "POST",
-	// 	headers: { "content-type": "application/json" },
-	// 	body: JSON.stringify(byFile),
-	// });
-	// const msg = await res.text();
-	alert("hi");
-}
-
-function navigateToNewPost() {
+function handlePlusButtonClick() {
 	location.href = "/api/new-post";
 }
 
@@ -43,14 +19,8 @@ export default function EditBar() {
 				zIndex: 9999,
 			}}
 		>
-			<button type="button" onClick={toggleEdit}>
-				✏️ Edit
-			</button>
-			<button type="button" onClick={navigateToNewPost}>
-				➕ New
-			</button>
-			<button type="button" onClick={save}>
-				💾 Save
+			<button type="button" onClick={handlePlusButtonClick}>
+				+
 			</button>
 		</div>
 	);
