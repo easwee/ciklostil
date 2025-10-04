@@ -10,9 +10,10 @@ import EditBar from "@/components/EditBar.tsx";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, created_at, updated_at, poster } = Astro.props;
 const token = Astro.cookies.get("sid")?.value;
 const isAdmin = !!verifySession(token);
+
 ---
 
 <html lang="en">
@@ -64,16 +65,17 @@ const isAdmin = !!verifySession(token);
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+					{poster && <Image width={1020} height={510} src={poster} alt="" />}
 				</div>
 				<div class="prose">
 					<div class="title">
 						<div class="date">
-							<FormattedDate date={pubDate} />
+							<p>{Astro.props.updated_at}</p>
+							<FormattedDate date={created_at} />
 							{
-								updatedDate && (
+								updated_at && (
 									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
+										Last updated on <FormattedDate date={updated_at} />
 									</div>
 								)
 							}
