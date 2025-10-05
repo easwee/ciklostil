@@ -3,10 +3,10 @@ import { getCollection, render } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
 
 const posts = await getCollection("blog");
-const post = posts.find(post => post.id === Astro.params.slug);//  dynamic part of the URL path
+const post = posts.find((post) => post.id === Astro.params.slug); //  dynamic part of the URL path
 
-if (!post) {
-    return <p>Post not found</p>;
+if (post === undefined) {
+	return Astro.redirect("/404");
 }
 
 const { Content } = await render(post);
